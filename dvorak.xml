@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<game name="Dvorak" id="51ac5322-f399-4116-a38e-12573aba58ae" octgnVersion="3.0.1.14" version="0.9.0" markersize="16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Game.xsd">
+	<scripts>
+		<script src="r18" />
+	</scripts>
+	<card back="r01" front="r02" width="83" height="120" cornerRadius="6">
+		<property name="Type" type="String" textKind="Enum" />
+		<property name="Subtype" type="String" textKind="Tokens" />
+		<property name="Rarity" type="String" ignoreText="true" textKind="Enum" />
+		<property name="Value" type="String" />
+		<property name="Rules" type="String" />
+		<property name="Flavor" type="String" ignoreText="true" />
+		<property name="Creator" type="String" ignoreText="true" />
+		<property name="Artist" type="String" ignoreText="true" />
+		<property name="Number" type="Integer" ignoreText="true" />
+	</card>
+	<table name="Table" visibility="undefined" ordered="false" width="640" height="480" background="r16" backgroundStyle="uniformToFill">
+		<groupaction menu="Next Phase" shortcut="ctrl+X" execute="nextPhase" default="true" />
+		<groupactions menu="Phases...">
+			<groupaction menu="Draw" shortcut="F1" execute="goToDraw" />
+			<groupaction menu="Play" shortcut="F2" execute="goToPlay" />
+			<groupaction menu="End" shortcut="F3" execute="goToEnd" />
+		</groupactions>
+		<groupaction menu="Clean-up Targets" shortcut="Esc" execute="clearAll" />
+		<groupaction menu="Create a Token..." shortcut="ctrl+shift+T" execute="token" />
+		<groupactions menu="Random...">
+			<groupaction menu="Roll 6-sided Die" shortcut="ctrl+R" execute="roll6" />
+			<groupaction menu="Roll 10-sided Die" shortcut="ctrl+shift+R" execute="roll10" />
+			<groupaction menu="Flip a Coin" shortcut="ctrl+C" execute="flipCoin" />
+		</groupactions>
+		<groupaction menu="Scoop" shortcut="ctrl+shift+S" execute="scoop" />
+		
+		<cardactions menu="Actions...">
+			<cardaction menu="Tap/Untap" shortcut="ctrl+T" execute="tapUntap" default="true" />
+			<cardaction menu="Turn over" shortcut="ctrl+F" execute="turnOver" />
+			<cardaction menu="Flip" shortcut="ctrl+shift+F" execute="flip" />
+			<cardaction menu="Clone" shortcut="ctrl+C" batchExecute="clone" />
+		</cardactions>
+		<cardactions menu="Combat...">
+			<cardaction menu="Attack" shortcut="ctrl+A" execute="attack" />
+			<cardaction menu="Block" shortcut="ctrl+B" execute="block" />
+		</cardactions>
+		<cardaction menu="Equip" shortcut="ctrl+Q" execute="attach" />
+		<cardaction menu="Use Action ability" shortcut="ctrl+Z" execute="activate" />
+		<cardactions menu="Move...">
+			<cardaction menu="Destroy" shortcut="Del" execute="destroy" />
+			<cardaction menu="Return to Deck" shortcut="ctrl+Y" execute="toDeck" />
+			<cardaction menu="Return to Hand" shortcut="ctrl+H" execute="toHand" />
+		</cardactions>
+		<cardaction menu="Clear" shortcut="esc" execute="clear" />
+		<cardaction menu="Add counter..." shortcut="ctrl+0" batchExecute="addMarker" /> 
+	</table>
+	<player summary="Hand: {#Hand}">
+		<hand name="Hand" shortcut="ctrl+H" visibility="me" width="63" height="88" icon="r15">
+			<cardaction menu="Play Card" default="true" execute="play" />
+			<cardaction menu="Discard Card" shortcut="Del" execute="discard" />
+			<cardaction menu="Return to Deck (reveal)" shortcut="ctrl+Y" execute="toDeck" />
+			<groupaction menu="Random Discard" execute="randomDiscard" />
+			<groupaction menu="SETUP (use only at game start)" execute="goToSetup" />
+		</hand>
+		<group name="Deck" shortcut="ctrl+I" visibility="none" width="63" height="88" icon="r11" collapsed="true" />
+	</player>
+	<deck>
+		<section name="Deck" group="Deck" />
+	</deck>
+	<shared>
+		<group name="Main Deck" shortcut="ctrl+I" visibility="none" width="63" height="88" icon="r11" collapsed="false">
+			<groupaction menu="Draw" shortcut="ctrl+D" default ="true" execute="draw" />
+			<groupaction menu="Draw X Cards" shortcut="ctrl+shift+D" execute="drawMany" />
+			<groupaction menu="Mill X Cards" execute="mill" />
+			<groupaction menu="Shuffle" shortcut="ctrl+S" execute="shuffle" />
+			<cardaction menu="Discard Top Card" shortcut="Del" execute="discard" />
+			<cardaction menu="Move Top Card to Hand (reveal)" shortcut="ctrl+H" execute="toHand" />
+			<groupaction menu="Reveal/Hide Top Card" shortcut="ctrl+shift+R" execute="revealTopDeck" />  
+		</group>
+		<group name="Discards" shortcut="del" visibility="all" width="63" height="88" icon="r12" collapsed="false">
+			<groupaction menu="Pick a Random Card" shortcut="ctrl+R" execute="randomPick" />
+			<groupaction menu="Shuffle" shortcut="ctrl+S" execute="shuffle" />
+			<groupaction menu="Shuffle into Deck" execute="shuffleIntoDeck" />
+			<cardaction menu="Move Top Card to Hand (reveal)" shortcut="ctrl+H" execute="toHand" />
+			<cardaction menu="Play Card" default="true" execute="play" />
+			<cardaction menu="Return Top Card to Deck" shortcut="ctrl+Y" execute="toDeck" />        
+		</group>
+	</shared>
+	<sharedDeck>
+		<section name="Main Deck" group="Main Deck" />
+	</sharedDeck>
+</game>
