@@ -3,6 +3,9 @@
   <Relationship Target="/cards/back.png" Id="r01" Type="http://schemas.octgn.org/picture" />
   <Relationship Target="/cards/front.png" Id="r02" Type="http://schemas.octgn.org/picture" />
   
+  <Relationship Target="/counters/counter1.png" Id="r03" Type="http://schemas.octgn.org/picture" />
+  <Relationship Target="/counters/counter2.png" Id="r04" Type="http://schemas.octgn.org/picture" />
+  
   <Relationship Target="/groups/library.png" Id="r11" Type="http://schemas.octgn.org/picture" />
   <Relationship Target="/groups/discarded.png" Id="r12" Type="http://schemas.octgn.org/picture" />
   <Relationship Target="/groups/hand.png" Id="r15" Type="http://schemas.octgn.org/picture" />

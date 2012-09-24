@@ -87,7 +87,7 @@ def chooseSide(): # Called from many functions to check if the player has chosen
 
 def placeCard(card, type = None):
    global playerside
-   card.moveToTable(0, 100*playerside)
+   # card.moveToTable(0, 100*playerside)
    if playerside == -1:
       card.orientation = Rot180
 
