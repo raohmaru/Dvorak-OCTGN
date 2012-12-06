@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<game name="Dvorak" id="51ac5322-f399-4116-a38e-12573aba58ae" octgnVersion="3.0.1.21" version="0.9.1" markersize="16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Game.xsd">
+<game name="Dvorak" id="51ac5322-f399-4116-a38e-12573aba58ae" octgnVersion="3.0.1.22" version="0.9.2" markersize="16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Game.xsd">
 	<scripts>
 		<script src="r18" />
 	</scripts>
@@ -66,7 +66,7 @@
 		<section name="Deck" group="Deck" />
 	</deck>
 	<shared>
-		<group name="Main Deck" shortcut="ctrl+I" visibility="none" width="63" height="88" icon="r11" collapsed="false">
+		<group name="Main Deck" shortcut="ctrl+I" visibility="none" width="63" height="88" icon="r12" collapsed="false">
 			<groupaction menu="Draw" shortcut="ctrl+D" default ="true" execute="draw" />
 			<groupaction menu="Draw X Cards" shortcut="ctrl+shift+D" execute="drawMany" />
 			<groupaction menu="Mill X Cards" execute="mill" />
@@ -75,7 +75,7 @@
 			<cardaction menu="Move Top Card to Hand (reveal)" shortcut="ctrl+H" execute="toHand" />
 			<groupaction menu="Reveal/Hide Top Card" shortcut="ctrl+shift+R" execute="revealTopDeck" />  
 		</group>
-		<group name="Discards" shortcut="del" visibility="all" width="63" height="88" icon="r12" collapsed="false">
+		<group name="Discards" shortcut="del" visibility="all" width="63" height="88" icon="r13" collapsed="false">
 			<groupaction menu="Pick a Random Card" shortcut="ctrl+R" execute="randomPick" />
 			<groupaction menu="Shuffle" shortcut="ctrl+S" execute="shuffle" />
 			<groupaction menu="Shuffle into Deck" execute="shuffleIntoDeck" />

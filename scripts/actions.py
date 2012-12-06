@@ -85,9 +85,21 @@ def chooseSide(): # Called from many functions to check if the player has chosen
                playeraxis = Yaxis
                playerside = -1
 
+
+def cardWidth(card, divisor = 10):
+   if divisor == 0: offset = 0
+   else: offset = card.width() / divisor
+   return (card.width() + offset)
+
+def cardHeight(card, divisor = 10):
+   if divisor == 0: offset = 0
+   else: offset = card.height() / divisor
+   return (card.height() + offset)
+
 def placeCard(card, type = None):
    global playerside
-   # card.moveToTable(0, 100*playerside)
+   ch = cardHeight(card, 0)
+   card.moveToTable(0, ch*playerside - ch/2)
    if playerside == -1:
       card.orientation = Rot180
 

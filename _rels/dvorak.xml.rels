@@ -6,8 +6,9 @@
   <Relationship Target="/counters/counter1.png" Id="r03" Type="http://schemas.octgn.org/picture" />
   <Relationship Target="/counters/counter2.png" Id="r04" Type="http://schemas.octgn.org/picture" />
   
-  <Relationship Target="/groups/library.png" Id="r11" Type="http://schemas.octgn.org/picture" />
-  <Relationship Target="/groups/discarded.png" Id="r12" Type="http://schemas.octgn.org/picture" />
+  <Relationship Target="/groups/deck.png" Id="r11" Type="http://schemas.octgn.org/picture" />
+  <Relationship Target="/groups/main_deck.png" Id="r12" Type="http://schemas.octgn.org/picture" />
+  <Relationship Target="/groups/discards.png" Id="r13" Type="http://schemas.octgn.org/picture" />
   <Relationship Target="/groups/hand.png" Id="r15" Type="http://schemas.octgn.org/picture" />
   
   <Relationship Target="/background/Simulated_Wood2.jpg" Id="r16" Type="http://schemas.octgn.org/picture" />
